@@ -1,0 +1,43 @@
+<html>
+<head>
+<link rel="stylesheet" href="../style2.css">
+<link rel="stylesheet" href="../js/jquery.shadow.css">
+<link rel="stylesheet" href="../js/flexslider.css">
+<script type="text/javascript" charset="utf-8">
+/*   $(document).ready(function() {
+    $('.flexslider').flexslider({
+    	animation: "slide",              //String: Select your animation type, "fade" or "slide"
+    	easing: "swing",               //{NEW} String: Determines the easing method used in jQuery transitions. jQuery easing plugin is supported!
+    	direction: "horizontal"
+    });
+  }); */
+ $(document).ready(function() {
+	$('.skillimage').each(function(){
+		var fileend = "_" + $(this).attr('id');
+		if ($(this).hasClass('off')) {
+			$(this).append('<img src=\"off'+fileend+'.png\" alt=\"skill\" >')
+		}
+		else {
+			$(this).append('<img src=\"on'+fileend+'.png\" alt=\"skill\">')
+		}
+	});
+ });
+</script>
+</head>
+<body>
+<!-- <div class="flexslider">
+  <ul class="slides">
+    <li>
+      <img src="../js/images/rsz_kula_login.jpg" />
+    </li>
+    <li>
+      <img src="../js/images/rsz_kula_hearts.png" />
+    </li>
+    <li>
+      <img src="../js/images/rsz_kula_crazy.png" />
+    </li>
+  </ul>
+</div> -->
+
+</body>
+</html>

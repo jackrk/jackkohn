@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Jack's Resum&#233;</title>
+<link rel="icon" type="image/ico" href="favicon.ico">
+<link rel="stylesheet" href="style2.css">
+<link rel="stylesheet" href="js/jquery.shadow.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="js/jquery.shadow.js"></script>
+<script src="js/jquery.transit.min.js"></script>
+<script src="js/header.js"></script>
+<script>
+$(document).ready(function() {
+	$('.download').bind('mouseenter',function() {
+		$('#docdown').transition({y: '+=160',opacity: 1,queue: false},300);
+		$('#docdown').bind('mouseenter',function() {
+			$(this).bind('click',function() {
+				window.location = 'kohnresume';
+			});
+		});	
+		$(this).bind('mouseout',function(){
+			$('#docdown').transition({y: '-=160',opacity: 0,queue: false},300);
+			$(this).unbind('mouseout');
+		});
+	});
+	$('.download').bind('click',function(){
+		$('#docdown').transition({opacity: 0,scale: 1.5,queue: false},300);
+		$(this).unbind('mouseout');
+		setTimeout(function() {
+			window.location = 'kohnresume';
+			$('#docdown').transition({y: '-=160',scale: 1,queue: false},300);
+		},160);
+	});
+});
+</script>
+</head>
+<body>
+<div id="main" style="height: 1280px !important;">
+<div class="topmenu">
+<a href="jackhome.html" class="menulink">HOME</a>
+<a href="about.html" class="menulink">ABOUT</a>
+<a href="work.html" class="menulink">WORK</a>
+<a href="resume.html" class="menulink selected last">RESUM&#201;</a>
+</div>
+<div id="topcontainer">
+<div id="resumeview">
+<div class="hoverdummy" title="Click to download a PDF" >
+<img id="docdown" class="docfill" src="js/images/document_alt_fill.svg" />
+<img class="download" src="js/images/cloud_download.svg"/>
+</div>
+<img class="resumeimg" src="js/images/resume-full.jpg"/>
+</div>
+</div>
+<div id="footer">
+<div class="foot">contact me: <a class="redlink"  href="mailto:jack.royal.kohn@gmail.com">jack.royal.kohn@gmail.com</a>  <a  class="redlink" target="new" href="http://www.linkedin.com/pub/jack-kohn/48/952/278">LinkedIn</a> <br> &#169; 2013 </div>
+</div>
+</div>
+</body>
+</html>

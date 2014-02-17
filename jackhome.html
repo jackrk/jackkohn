@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Jack Kohn</title>
+<link rel="icon" type="image/ico" href="favicon.ico">
+<link rel="stylesheet" href="style2.css">
+<link rel="stylesheet" href="js/jquery.shadow.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="js/jquery.shadow.js"></script>
+<script src="js/jquery.transit.min.js"></script>
+<script src="js/header.js"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<script>
+$(document).ready(function(){
+	$('.blur').bind('mouseenter',function(){
+		$(this).transition({opacity: 1, queue: false},200);
+		$(this).next().transition({y: '-=10',backgroundColor: '#d85656',color: 'white', queue: false},150);
+		$(this).bind('mouseout',function() {
+			$(this).transition({opacity: .5, queue: false},200);
+			$(this).next().transition({y: '+=10',backgroundColor: '',color: 'black', queue: false},150);
+			$(this).unbind('mouseout');
+			$(this).unbind('click');
+			return false;
+		});
+		$(this).bind('click',function(){
+			var id = $(this).attr('id');
+			if (id == "workimg")
+				window.location = "work.html";
+			else if (id == "aboutimg")
+				window.location = "about.html";
+			else if (id == "resumeimg")
+				window.location = "resume.html";
+		});
+		return false;
+	});
+});
+</script>
+</head>
+<body>
+<div id="main">
+<div class="topmenu">
+<a href="jackhome.html" class="menulink selected">HOME</a>
+<a href="about.html" class="menulink">ABOUT</a>
+<a href="work.html" class="menulink">WORK</a>
+<a href="resume.html" class="menulink last">RESUM&#201;</a>
+</div>
+<div id="topcontainer">
+
+<div class="welcome">Thanks for taking the time to stop by!</div>
+<div class="hometext">
+<div class="homebox"><img class="homeimg_work blur" id="workimg" src="js/view/rsz_kula_login.jpg"/><div class="homecap">Check out WORK to see some past projects I've highlighted</div></div>
+
+<div class="homebox"><img class="homeimg_work blur" id="aboutimg" src="js/images/trumpet.jpg"  /><div class="homecap">Head to ABOUT to learn a little more about me as a person</div></div>
+
+<div class="homebox"><img class="homeimg_work blur" id="resumeimg" src="js/images/resume-full.jpg"  /><div class="homecap">You can view and download a copy of my resume over on the RESUM&#201; page</div></div>
+</div>
+<a class="twitter twitter-timeline" width="432" height="714" href="https://twitter.com/KackJohn" data-widget-id="364127183033217024">Tweets by @KackJohn</a>
+
+</div>
+<div id="footer">
+<div class="foot">contact me: <a  class="redlink"  href="mailto:jack.royal.kohn@gmail.com">jack.royal.kohn@gmail.com</a>  <a  class="redlink" target="new" href="http://www.linkedin.com/pub/jack-kohn/48/952/278">LinkedIn</a> <br> &#169; 2013 </div>
+</div>
+</div>
+</body>
+</html>
